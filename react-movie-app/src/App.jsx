@@ -1,12 +1,11 @@
-import { useState } from "react";
 import "./App.css";
-import DropDownList from "./components/DropDownList";
+import MovieSelector from "./components/MovieSelector";
+
 
 function App() {
   return (
   <div>
-    <h1>Movie List</h1>
-    <DropDownList />
+  <MovieSelector />
   </div>
   )
 }
