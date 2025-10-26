@@ -29,12 +29,13 @@ export default function MovieSelector() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Movie Selector</h2>
 
       <select
         value={selectedGenre}
         onChange={(e) => setSelectedGenre(e.target.value)}
+        className="select"
       >
         <option value="">-- Select Genre --</option>
         <option value="Action">Action</option>
@@ -42,16 +43,20 @@ export default function MovieSelector() {
         <option value="Drama">Drama</option>
       </select>
 
-      <button onClick={fetchMovies}>Fetch Movies</button>
+      <button onClick={fetchMovies} className="button">
+        Fetch Movies
+      </button>
 
-      {isLoading && <p>Loading movies...</p>}
+      {isLoading && <p className="loading">Loading movies...</p>}
 
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
 
       {movies.length > 0 && (
-        <ul>
+        <ul className="list">
           {movies.map((movie, index) => (
-            <li key={index}>{movie}</li>
+            <li key={index} className="item">
+              {movie}
+            </li>
           ))}
         </ul>
       )}
